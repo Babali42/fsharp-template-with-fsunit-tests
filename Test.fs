@@ -8,5 +8,5 @@ open fsharp_template_with_tests.App
 module Tests =
 
     [<Test>]
-    let ``One should equal one`` () =
+    let ``One should be equal to one`` () =
         one() |> should equal 1
