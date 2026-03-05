@@ -1,8 +1,9 @@
 name: Build and test fsharp
 on:
   push:
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
     
 jobs:
   build-and-test:
@@ -16,10 +17,7 @@ jobs:
           dotnet-version: 8.0.x
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: ${{ env.FS_LIBRARY_DIR }}
       - name: Build
         run: dotnet build --no-restore
-        working-directory: ${{ env.FS_LIBRARY_DIR }}
       - name: Test
         run: dotnet test --no-build --verbosity normal
-        working-directory: ${{ env.FS_LIBRARY_DIR }}
