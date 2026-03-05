@@ -9,4 +9,4 @@ module Tests =
 
     [<Test>]
     let ``One should be equal to one`` () =
-        one() |> should equal 10
+        one() |> should equal 1
